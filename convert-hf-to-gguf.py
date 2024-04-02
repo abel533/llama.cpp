@@ -1944,7 +1944,7 @@ class BertModel(Model):
                 print(f"Can not map tensor {name!r}")
                 sys.exit()
 
-            data = data_torch.squeeze().numpy()
+            data = data_torch.squeeze().to(torch.float).numpy()
             n_dims = len(data.shape)
             new_dtype: type[np.floating[Any]]
 
